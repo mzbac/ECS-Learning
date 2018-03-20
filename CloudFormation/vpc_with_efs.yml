@@ -287,6 +287,10 @@ Resources:
       SecurityGroups:
       - !Ref EFSSecurityGroup
       SubnetId: !Ref PublicNetAZ2
+  ECR:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: !Sub ${AWS::StackName}-sample
 Outputs:
   VPCID:
     Value: !Ref VPCBase
